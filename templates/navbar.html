@@ -1,0 +1,163 @@
+{% load static %}
+<header class="header header-intro-clearance header-4">
+            <div class="header-top">
+                <div class="container">
+                    <div class="header-left">
+                        <a href="tel:#"><i class="icon-phone"></i>Call: +91 8869888822</a>
+                    </div><!-- End .header-left -->
+
+                    <div class="header-right">
+
+                        <ul class="top-menu">
+                            <li>
+                            </li>
+                        </ul><!-- End .top-menu -->
+                    </div><!-- End .header-right -->
+
+                </div><!-- End .container -->
+            </div><!-- End .header-top -->
+
+            <div class="header-middle">
+                <div class="container">
+                    <div class="header-left">
+                        <button class="mobile-menu-toggler">
+                            <span class="sr-only">Toggle mobile menu</span>
+                            <i class="icon-bars"></i>
+                        </button>
+
+                        <a href="#" class="logo">
+                            <img src="{% static 'nn.png' %}" alt="Cheaptechguys" width="100" height="0">
+                        </a>
+                    </div><!-- End .header-left -->
+
+                    <div class="header-center">
+                        <div class="header-search header-search-extended header-search-visible header-search-no-round">
+                            <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
+                            <form action="#" method="get">
+                                <div class="header-search-wrapper search-wrapper-wide">
+                                    <label for="q" class="sr-only">Search</label>
+                                    <input type="search" class="form-control" name="q" id="q" placeholder="Search product ..." required>
+
+                                    <button class="btn btn-primary" type="submit"><i class="icon-search"></i></button>
+                                </div><!-- End .header-search-wrapper -->
+                            </form>
+                        </div><!-- End .header-search -->
+                    </div>
+
+                    <div class="header-right">
+                    <div>
+                    {% if not request.user.is_authenticated %}
+                        <a href="{% url 'register' %}">Signin or login</a>
+                    {% endif %}
+                    </div><!-- End .header-right -->
+                        <div class="wishlist">
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'logout' %}" title="logout">
+                                logout
+                            </a>
+                        {% endif %}
+                        </div><!-- End .compare-dropdown -->
+                </div><!-- End .container -->
+
+            </div><!-- End .header-middle -->
+                <div class="header-bottom sticky-header">
+                <div class="container">
+                    <div class="header-left">
+                        <div class="dropdown category-dropdown">
+                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static" title="Browse Categories">
+                                Browse Categories <i class="icon-angle-down"></i>
+                            </a>
+
+                            <div class="dropdown-menu">
+                                <nav class="side-nav">
+                                    <ul class="menu-vertical sf-arrows">
+                                        <li class="item-lead"><a href="#">Categories</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Smart Speakers' %}">Smart Speakers</a></li>
+                                                        <li><a href="{% url 'categorylist'  'Camera' %}"><span>Cameras<span class="tip tip-new"></span></span></a></li>
+                                                        <li><a href="{% url 'categorylist' 'Smart Watch' %}">Smart Watches</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Tablets' %}">Tablets</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Laptops' %}">Laptops</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Keyboard' %}">Keyboard</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Mouse' %}">Mouse</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Headphone' %}">Headset/headphone</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Smart phone' %}">Smart Phones</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Monitors' %}">Monitor</a></li>
+                                    </ul><!-- End .menu-vertical -->
+                                </nav><!-- End .side-nav -->
+                            </div><!-- End .dropdown-menu -->
+                        </div><!-- End .category-dropdown -->
+                    </div><!-- End .header-left -->
+
+
+                    <div class="header-center">
+                        <nav class="main-nav">
+                            <ul class="menu sf-arrows">
+                                <li><a href="#">Home</a></li>
+
+
+                                </li>
+                                <li>
+                                    <a href="product.html">Product</a>
+
+                                    <div class="megamenu megamenu-sm">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-6">
+                                                <div class="menu-col">
+                                                    <div class="menu-title">Product Categories</div><!-- End .menu-title -->
+                                                    <ul>
+                                                        <li><a href="{% url 'categorylist' 'Smart Speakers' %}">Smart Speakers</a></li>
+                                                        <li><a href="{% url 'categorylist'  'Camera' %}"><span>Cameras<span class="tip tip-new"></span></span></a></li>
+                                                        <li><a href="{% url 'categorylist' 'Smart Watch' %}">Smart Watches</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Tablets' %}">Tablets</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Laptops' %}">Laptops</a></li>
+                                                        <li><a href="{% url 'categorylist' 'keyboard' %}">Keyboard</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Mouse' %}">Mouse</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Headphone' %}">Headset/headphone</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Smart phone' %}">Smart Phones</a></li>
+                                                        <li><a href="{% url 'categorylist' 'Monitors' %}">Monitor</a></li>
+                                                        <li><a href="{% url 'categorylist' 'TV' %}">TV</a></li>
+                                                    </ul>
+                                                </div><!-- End .menu-col -->
+                                            </div><!-- End .col-md-6 -->
+
+                                            <div class="col-md-6">
+                                                <div class="banner banner-overlay">
+                                                    <a href="category.html">
+                                                        <img src="{% static 'assets/images/menu/banner-2.jpg' %}" alt="Banner">
+
+                                                        <div class="banner-content banner-content-bottom">
+                                                            <div class="banner-title text-white">Cheap Tech<br><span><strong>Powererd by amazon</strong></span></div><!-- End .banner-title -->
+                                                        </div><!-- End .banner-content -->
+                                                    </a>
+                                                </div><!-- End .banner -->
+                                            </div><!-- End .col-md-6 -->
+                                        </div><!-- End .row -->
+                                    </div><!-- End .megamenu megamenu-sm -->
+                                </li>
+                                <li>
+                                    <a href="{% url 'about us' %}" >AboutUs</a>
+                                </li>
+                                </li>
+                                <li>
+                                    <a href="#" >PrivacyPolicy</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'affiliate disclosure' %}">AffiliateDisclosure</a>
+                                </li>
+                            </ul><!-- End .menu -->
+
+                        </nav><!-- End .main-nav -->
+                    </div><!-- End .header-center -->
+
+                    <div class="header-right">
+                    <div>
+                            {% if request.user.is_authenticated %}
+                            <h4>Hello, {{ request.user.username }}</h4>
+                            {% endif %}
+                            </div>
+                        <i class="la la-lightbulb-o"></i><p>Support<span class="highlight">&nbsp; 24/7</span></p>
+                    </div>
+                </div><!-- End .container -->
+            </div><!-- End .header-bottom -->
+        </header><!-- End .header -->
+
