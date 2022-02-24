@@ -69,7 +69,10 @@ def affiliate_disclosure(request):
 def our_services(request):
     return render(request, 'services.html')
 
-
+def navsearch(request):
+    q = request.GET.get('q')
+    data = Product.objects.filter(Title__icontains=q).order_by('id')
+    return render(request, 'navbar.html', {'data':data})
 
 
 
